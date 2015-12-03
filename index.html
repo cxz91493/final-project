@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>包裹計價比一比</title>
+    
+    <style>
+      body {
+        border: 1px solid black;
+      }
+    </style>
+    
+    <link href="style/style.css" type="text/css" rel="stylesheet">
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script type="text/javascript" src="app.js" ></script>
+
+  </head>
+
+  <body>
+    <!-- This code is in the public domain. Enjoy! -->
+    <h1>包裹計價比一比</h1>
+
+    <div class="form-box">
+      <h2>運費試算</h2>
+
+    <form id="task-form" >
+      <div class="size-width"><label for="package-weight">重量 : </label><input type="number" id="package-weight" required><label>  kg </label></div>
+      <div class="size-width"><label for="package-length">長 : </label><input type="number" id="package-length" required><label>  cm </label></div>
+      <div class="size-width"><label for="package-wide">寬 : </label><input type="number" id="package-wide" required><label> cm </label></div>
+      <div class="size-width"><label for="package-height">高 : </label><input type="number" id="package-height" required><label>  cm </label></div>
+      <div class="place-width"><label for="start-place">寄件地點 :</label>
+            <select id="start-place" required>
+              <option value="台北市">台北市</option>
+              <option value="新北市">新北市</option>
+              <option value="基隆">基隆</option>
+              <option value="桃園市">桃園市</option>
+              <option value="新竹縣">新竹縣</option>
+              <option value="苗栗縣">苗栗縣</option>
+              <option value="台中市">台中市</option>
+              <option value="彰化縣">彰化縣</option>
+              <option value="雲林縣">雲林縣</option>
+              <option value="嘉義縣">嘉義縣</option>
+              <option value="台南市">台南市</option>
+              <option value="高雄市">高雄市</option>
+              <option value="屏東縣">屏東縣</option>
+              <option value="南投縣">南投縣</option>
+              <option value="宜蘭縣">宜蘭縣</option>
+              <option value="花蓮縣">花蓮縣</option>
+              <option value="台東縣">台東縣</option>
+              <option value="澎湖縣">澎湖縣</option>
+              <option value="金門縣">金門縣</option>
+              <option value="馬祖地區">馬祖地區</option>
+              <option value="東引地區">東引地區</option>
+              <option value="烏坵地區">烏坵地區</option>
+              <option value="綠島地區">綠島地區</option>
+              <option value="蘭嶼地區">蘭嶼地區</option>
+              <option value="琉球地區">琉球地區</option>
+            </select></div>
+      
+      <div class="place-width"><label for="end-place">收件地點 :</label>
+           <select id="end-place" required>
+              <option value="台北市">台北市</option>
+              <option value="新北市">新北市</option>
+              <option value="基隆">基隆</option>
+              <option value="桃園市">桃園市</option>
+              <option value="新竹縣">新竹縣</option>
+              <option value="苗栗縣">苗栗縣</option>
+              <option value="台中市">台中市</option>
+              <option value="彰化縣">彰化縣</option>
+              <option value="雲林縣">雲林縣</option>
+              <option value="嘉義縣">嘉義縣</option>
+              <option value="台南市">台南市</option>
+              <option value="高雄市">高雄市</option>
+              <option value="屏東縣">屏東縣</option>
+              <option value="南投縣">南投縣</option>
+              <option value="宜蘭縣">宜蘭縣</option>
+              <option value="花蓮縣">花蓮縣</option>
+              <option value="台東縣">台東縣</option>
+              <option value="澎湖縣">澎湖縣</option>
+              <option value="金門縣">金門縣</option>
+              <option value="馬祖地區">馬祖地區</option>
+              <option value="東引地區">東引地區</option>
+              <option value="烏坵地區">烏坵地區</option>
+              <option value="綠島地區">綠島地區</option>
+              <option value="蘭嶼地區">蘭嶼地區</option>
+              <option value="琉球地區">琉球地區</option>
+           </select>
+      </div>
+      
+      <div class="third-width"><label for="deadline-year">服務種類:</label>
+
+          <input type="radio"  id="normal" name="tempType" checked><label> 常溫</label></input>
+          <input type="radio" id="low" name="tempType" ><label> 低溫</label></input>
+      
+      </div>
+
+      <div>  
+        <button id="compute"  onclick="return computing()">計算</button>
+      </div>
+      
+    </form>
+    </div>
+  </body>  
+</html>
