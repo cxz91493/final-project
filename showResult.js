@@ -122,6 +122,63 @@ window.onload = function(){
 };
 
 
+/*************     Google Map     *************/
+
+var latitude;
+var longitude;
+
+var geoFindMe = function(){
+	console.log("in");
+	navigator.geolocation.getCurrentPosition(success, error);
+
+	if (!navigator.geolocation){
+		console.log("Geolocation is not supported by your browser");
+		return;
+	}
+	function success(position) {
+
+	latitude  = position.coords.latitude;
+	longitude = position.coords.longitude;
+
+	latitude = Math.round(latitude*1000)/1000;
+	longitude = Math.round(longitude*1000)/1000;
+
+	console.log( '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
+	}
+
+	function error() {
+		console.log("Unable to retrieve your location");
+	};
+    
+}
+
+geoFindMe();
+
+var findGov = function(){
+	var url1 = "postplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+	window.location.href = url1 ;
+	return false;
+}
+
+var findCat = function(){
+	var url2 = "catplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+	window.location.href = url2;
+	return false;
+}
+
+var findPelican = function(){
+	var url3 = "pelicanplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+	window.location.href = url3 ;
+	return false;
+}
+
+var findHct = function(){
+	var url4 = "hctplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+	window.location.href = url4 ;
+	return false;
+}
+
+
    	
 
 

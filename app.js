@@ -1,5 +1,3 @@
-/*window.onload = function(){*/
-//window.addEventListener("load", function() {
 
 	var packageWeight = 0;
 	var packageLength = 0;
