@@ -32,7 +32,7 @@ window.onload = function(){
 		}
 		cheapest_price = buffer;
 
-		//find cheapest company
+		//Find cheapest company
 		for(var i=0; i<cost_array.length ; i++){
 			if(cost_array[i]  === cheapest_price){
 				cheapest_array[i] = true;
@@ -73,14 +73,11 @@ window.onload = function(){
 		
 	var getValue = function(varname) {// Get value from url 
 	     
-	    //URL
-	    var url = location.href;
-	     
-	    //取得問號之後的值
-	    var temp = url.split("?");
+	    var url = location.href;//URL
+	   
+	    var temp = url.split("?");//取得問號之後的值
 	 
-	    //將值再度分開
-	    var vars = temp[1].split("&");
+	    var vars = temp[1].split("&");//將值再度分開
 	 
 	 	for (i=0; i<vars.length; i++)
 		{
@@ -92,7 +89,6 @@ window.onload = function(){
 		    }
 		}
 		return value;
-	 
 	}
 
 	cost_array[0] = getValue("gov");
@@ -128,7 +124,6 @@ var latitude;
 var longitude;
 
 var geoFindMe = function(){
-	console.log("in");
 	navigator.geolocation.getCurrentPosition(success, error);
 
 	if (!navigator.geolocation){
@@ -177,11 +172,3 @@ var findHct = function(){
 	window.location.href = url4 ;
 	return false;
 }
-
-
-   	
-
-
-
-
-

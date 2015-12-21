@@ -13,6 +13,9 @@
       #map {
         height: 100%;
       }
+      #back_index{
+          font-size: 18px;
+      }
     </style>
 
     <script>
@@ -49,7 +52,7 @@
         latitude = Number(getValue("lat"));
         longitude = Number(getValue("lng"));
         var pyrmont = {lat: latitude, lng: longitude};
-        console.log("pyrmont type:"+typeof(pyrmont.lat));
+        //console.log("pyrmont type:"+typeof(pyrmont.lat));
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
           zoom: 17

@@ -12,5 +12,11 @@
   "developer": {
     "name": "Kiki Yin",
     "url": "http://example.com"
+  },
+  "permissions": {
+    "geolocation": {}
+  },
+  "dependencies": {
+    "mocha": "~2.3.2"
   }
 }
