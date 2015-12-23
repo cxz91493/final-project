@@ -11,8 +11,10 @@
   },
   "developer": {
     "name": "Kiki Yin",
-    "url": "http://example.com"
+    "url": "https://github.com/kikiyin/final-project.git"
   },
+  "default_locale": "zh-TW",
+  "type": "privileged",
   "permissions": {
     "geolocation": {}
   },

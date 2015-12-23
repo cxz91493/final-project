@@ -543,7 +543,7 @@ var hct_determindArea = function(place){
 	}
 };
 
-var module = { exports: {} };
+//var module = { exports: {} };
 // load eventemitter, problem solved without having to modify the code.
 
 // exports method for other modules or files to use
