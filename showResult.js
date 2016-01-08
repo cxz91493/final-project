@@ -110,7 +110,6 @@ window.onload = function(){
 		window.location.href = "index.html" ;
 	}
 	
-
 	document.getElementById('show-result1').innerHTML = cheapest_company ;
 	document.getElementById('show-price').innerHTML = "花費: $"+cheapest_price ;
 	document.getElementById('show_others').innerHTML = other_company ;
@@ -119,7 +118,6 @@ window.onload = function(){
 
 
 /*************     Google Map     *************/
-
 var latitude;
 var longitude;
 
@@ -149,26 +147,32 @@ var geoFindMe = function(){
 
 geoFindMe();
 
-var findGov = function(){
-	var url1 = "postplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
-	window.location.href = url1 ;
-	return false;
-}
+/*************  Click the picture and find nearest place  *************/
+window.addEventListener("load", function() {
 
-var findCat = function(){
-	var url2 = "catplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
-	window.location.href = url2;
-	return false;
-}
+	document.getElementById('img0').addEventListener("click", function(){
+		var url1 = "postplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+		window.location.href = url1 ;
+	});
 
-var findPelican = function(){
-	var url3 = "pelicanplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+	document.getElementById('img1').addEventListener("click", function(){
+		var url2 = "catplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+		window.location.href = url2;
+	});
+
+	document.getElementById('img2').addEventListener("click", function(){
+		var url3 = "pelicanplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
 	window.location.href = url3 ;
-	return false;
-}
+	});
 
-var findHct = function(){
-	var url4 = "hctplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
-	window.location.href = url4 ;
-	return false;
-}
+	document.getElementById('img3').addEventListener("click", function(){
+		var url4 = "hctplace.html?lat=" + latitude.toString() +"&lng="+ longitude.toString() ;
+		window.location.href = url4 ;
+	});
+	
+	document.getElementById('back_index').addEventListener("click", function(){
+        window.location.href = "index.html" ;
+    });
+});
+
+

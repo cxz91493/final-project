@@ -13,45 +13,35 @@
     </style>
     
     <link href="style/style.css" type="text/css" rel="stylesheet">
-    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
-         so we use a script file. -->
+  
     <script language="JavaScript" type="text/javascript" src="showResult.js" ></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 
   </head>
 
   <body>
     
-    <button id="back_index"  onClick="location.href='index.html'" >Back</button>
+    <button id="back_index" >Back</button>
     <h1>包裹計價比一比</h1>
 
     <div class="form-box">
-    <h2>試算結果</h2>
-	<table class="logo">
-      <tr>
-          <td><img class="img0" src="logo/gov_logo1.jpg"  align="middle" onclick="return findGov()"></td>
-          <td><img class="img1" src="logo/cat_logo1.jpg"  align="middle" onclick="return findCat()"></td>
-          <td><img class="img2" src="logo/pelican_logo1.jpg"  align="middle" onclick="return findPelican()"></td>
-          <td><img class="img3" src="logo/hct_logo1.jpg" align="middle" onclick="return findHct()"></td>
-      </tr>
-      
-  </table>
-    <form id="task-form1" >
-      <div id="debug1"></div>
-      <div id="debug2"></div>
-      <div id="debug3"></div>
-      <div id="debug4"></div>
-      <div id="debug5"></div>
-      <div class="third-width"><div id="show-result1"></div></label></div>
-      
-      <div class="third-width">為您的最佳選擇!!</h3></div>
- 
-      <div class="third-width"><div id="show-price"></div></div>
-      
-      <div id="show_others"></div>
+      <h2>試算結果</h2>
+    	<table class="logo">
+        <tr>
+          <td><img id="img0" class="img0" src="logo/gov_logo1.jpg" align="middle" ></td>
+          <td><img id="img1" class="img1" src="logo/cat_logo1.jpg" align="middle" ></td>
+          <td><img id="img2" class="img2" src="logo/pelican_logo1.jpg" align="middle" ></td>
+          <td><img id="img3" class="img3" src="logo/hct_logo1.jpg" align="middle" ></td>
+        </tr>
+      </table>
 
-      <div id="tell_user">*按下圖示可顯示鄰近據點</div>
-    </form>
+      <div class="task-form" >
+        <div class="third-width"><div id="show-result1"></div></label></div>
+        <div class="third-width">為您的最佳選擇!!</div>
+        <div class="third-width"><div id="show-price"></div></div>
+        <div id="show_others"></div>
+        <div id="tell_user">*按下圖示可顯示鄰近據點</div>
+      </div>
     </div>
   </body>  
 </html>

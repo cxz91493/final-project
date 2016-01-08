@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "name": "ComparePackage",
+  "name": "包裹比價",
   "description": "Compare which transport company is beneficial for user",
   "launch_path": "/index.html",
   "icons": {
@@ -16,9 +16,6 @@
   "default_locale": "zh-TW",
   "type": "privileged",
   "permissions": {
-    "geolocation": {}
-  },
-  "dependencies": {
-    "mocha": "~2.3.2"
+    "geolocation": { "description": "Used to position the map to your current position" }
   }
 }

@@ -25,61 +25,63 @@ var inputNull = false;
 
 var buffer = 1000;
 
-var computing = function(){
 
-	inputNull = false;
-	/************************   Check input   ************************/
-	if(document.getElementById('package-weight').value==""){inputNull = true;}
-	if(document.getElementById('package-length').value==""){inputNull = true;}
-	if(document.getElementById('package-wide').value==""){inputNull = true;}
-	if(document.getElementById('package-height').value==""){inputNull = true;}
+window.addEventListener("load", function() {
+	document.getElementById('compute').addEventListener("click", function(){
+			
+		inputNull = false;
 
-	packageWeight = parseInt(document.getElementById('package-weight').value);
-	packageLength = parseInt(document.getElementById('package-length').value);
-	packageWide = parseInt(document.getElementById('package-wide').value);
-	packageHeight = parseInt(document.getElementById('package-height').value);
-	startPlace = document.getElementById('start-place').value;
-	endPlace = document.getElementById('end-place').value;
+		/************************   Check input   ***********************/
+		if(document.getElementById('package-weight').value==""){inputNull = true;}
+		if(document.getElementById('package-length').value==""){inputNull = true;}
+		if(document.getElementById('package-wide').value==""){inputNull = true;}
+		if(document.getElementById('package-height').value==""){inputNull = true;}
 
-	
-	gov_cost = 0;
-	cat_cost = 0;
-	pelican_cost = 0;
-	hct_cost = 0;
+		packageWeight = parseInt(document.getElementById('package-weight').value);
+		packageLength = parseInt(document.getElementById('package-length').value);
+		packageWide = parseInt(document.getElementById('package-wide').value);
+		packageHeight = parseInt(document.getElementById('package-height').value);
+		startPlace = document.getElementById('start-place').value;
+		endPlace = document.getElementById('end-place').value;
 
-	packageSize = packageLength + packageWide + packageHeight;
+		
+		gov_cost = 0;
+		cat_cost = 0;
+		pelican_cost = 0;
+		hct_cost = 0;
 
-	if(document.getElementById('normal').checked){
-		normalTemp = true;
-	}else if(document.getElementById('low').checked){
-		lowTemp = true;
-	}
-	
-	gov_valid = false;
-	cat_valid = false;
-	pelican_valid = false;
-	hct_valid = false;
+		packageSize = packageLength + packageWide + packageHeight;
 
-	buffer = 1000;
+		if(document.getElementById('normal').checked){
+			normalTemp = true;
+		}else if(document.getElementById('low').checked){
+			lowTemp = true;
+		}
+		
+		gov_valid = false;
+		cat_valid = false;
+		pelican_valid = false;
+		hct_valid = false;
 
-	gov_post();
-	cat_post();
-	pelican_post();
-	hct_post();
-	
+		buffer = 1000;
 
-	if(inputNull === true){ // Not enough package information 
-		alert("請輸入完整包裹資訊");
-	}else{
-		var url = "result.html?gov=" + gov_cost.toString() +"&cat="+ cat_cost.toString() +"&pelican="+ pelican_cost.toString() +"&hct="+ hct_cost.toString();
-		window.location.href = url ;
-	}
-	return false;	
-}
-
+		gov_post();
+		cat_post();
+		pelican_post();
+		hct_post();
+		
+		if(inputNull === true){ // Not enough package information 
+			alert("請輸入完整包裹資訊");
+		}else{
+			var url = "result.html?gov=" + gov_cost.toString() +"&cat="+ cat_cost.toString() +"&pelican="+ pelican_cost.toString() +"&hct="+ hct_cost.toString();
+			window.location.href = url ;
+		}
+		return false;	
+	});
+});
 
 var gov_post = function(){
-	
+	console.log("in");
 	if(lowTemp === true){
 		alert("【中華郵政】\n 無低溫宅配服務");
 		gov_valid = false;
@@ -543,7 +545,7 @@ var hct_determindArea = function(place){
 	}
 };
 
-//var module = { exports: {} };
+var module = { exports: {} };
 // load eventemitter, problem solved without having to modify the code.
 
 // exports method for other modules or files to use
@@ -552,4 +554,5 @@ module.exports.determindArea = determindArea;
 module.exports.cat_determindArea = cat_determindArea;
 module.exports.determindCostPlan = determindCostPlan;
 module.exports.hct_determindArea = hct_determindArea;
+
 
